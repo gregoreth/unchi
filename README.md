@@ -10,7 +10,7 @@ I haven't even tested this outside of the existing installation I've used to mak
 |       Server Requirements      | Client Requirements |
 | ------------------------------ | ------------------- |
 | PHP 5.1                        | Nothing             |
-| Apache + RewriteRule (for now) | ShareX (optional)   |
+| Apache + mod_rewrite (for now) | ShareX (optional)   |
 | ~512mb RAM                     | Modern-ish browser  |
 
 Features
