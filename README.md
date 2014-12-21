@@ -7,11 +7,11 @@ I'm still working on getting it to be "amazing." At the moment it's in a sort of
 
 I haven't even tested this outside of the existing installation I've used to make it. I'm not even sure if this works. I'm not even sure why I githubbed this. 
 
-| Server Requirements | Client Requirements |
-| ------------------- | ------------------- |
-| PHP 5.1             | Nothing             |
-| Reasonable space    | ShareX (optional)   |
-| ~512mb RAM          | Modern-ish browser  |
+|       Server Requirements      | Client Requirements |
+| ------------------------------ | ------------------- |
+| PHP 5.1                        | Nothing             |
+| Apache + RewriteRule (for now) | ShareX (optional)   |
+| ~512mb RAM                     | Modern-ish browser  |
 
 Features
 --------
