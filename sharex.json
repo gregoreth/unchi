@@ -1,0 +1,17 @@
+{
+  "Name": "Unchi",
+  "RequestType": "POST",
+  "RequestURL": "http://your.url/upload.php",
+  "FileFormName": "fileup",
+  "Arguments": {
+    "submit": "submit",
+    "password": "get your own password"
+  },
+  "ResponseType": "Text",
+  "RegexList": [
+    "\"filename\":\"(.+)\""
+  ],
+  "URL": "http://your.url/$1,1$",
+  "ThumbnailURL": "",
+  "DeletionURL": ""
+}
