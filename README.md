@@ -2,6 +2,7 @@ unchi
 =====
 
 A little file hosting script with an image gallery. ShareX JSON file included. 
+I'm still working on getting it to be "amazing." At the moment it's in a sort of clusterfuck mode to me, but then again I'm really unconfident in my code so it could be good and i'm just bad.
 
 | Server Requirements | Client Requirements |
 | ------------------- | ------------------- |
