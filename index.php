@@ -64,18 +64,21 @@ if(isset($_GET['key']) && hash('sha512', $_GET['key']) == $unchi['password']) {
 			</table>');
 	}
 	
-}
-	
-	// Display the page count so you can actually navigate between them
+	// Display the total files/images and page links 
 	print('</div>
 		<div class="menu bottom">
 			Total: '.$filecount.' files. Pages:');
-			for ($i=1; $i<=$pgamnt; $i++) { if($i == $page) 
-												echo "\n".'			<i>'.$i.'</i>'; 
-												else echo "\n".'			<a href="?key='.@$_GET['key'].'&page='.$i.'&view='.$view.'">'.$i.'</a>'; 
-										  }
+	
+	// The for loop for displaying page links
+	for ($i=1; $i<=$pgamnt; $i++) { 
+		echo ($i == $page ? "\n".'			<i>'.$i.'</i>' : "\n".'			<a href="?key='.@$_GET['key'].'&page='.$i.'&view='.$view.'">'.$i.'</a>');
+	}
+	
+}
+	
 	?>
+	
 		</div>
 		<div id="footer">&copy; nookls 20141-12121.</div>
 	</body>
-</html>'
+</html>
