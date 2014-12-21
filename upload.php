@@ -1,8 +1,8 @@
 <body class="upload">
 <link rel="stylesheet" type="text/css" href="/unchi.css" />
-<div class="header">Unchi うんち</div>
+<div class="header">File host thing</div>
 <div id="cont">
-Welcome to unchi! The file host that comes out of your anus.<br><br>
+Welcome to not unchi! The file host that might come out of your anus.<br><br>
 <form method="POST" enctype="multipart/form-data">
 	<input type="file" name="fileup" /><br>
 	<input type="text" name="password" placeholder="Password" />
