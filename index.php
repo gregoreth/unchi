@@ -5,7 +5,7 @@
 		<title>Unchi - Gallery</title>
 	</head>
 	<body class="gallery">
-		<div class="header">Unchi — うんち</div>
+		<div class="header">File host thing</div>
 		<div class="menu top"><a href="upload.php">Upload</a> | <a href="?key=<?=@$_GET['key']?>">Gallery View (images only)</a> | <a href="?key=<?=@$_GET['key']?>&view=list">File Listing View</a></div>
 		<div id="cont">
 <?php
@@ -74,8 +74,8 @@ if(isset($_GET['key']) && hash('sha512', $_GET['key']) == $unchi['password']) {
 												echo "\n".'			<i>'.$i.'</i>'; 
 												else echo "\n".'			<a href="?key='.@$_GET['key'].'&page='.$i.'&view='.$view.'">'.$i.'</a>'; 
 										  }
-	print('
+	?>
 		</div>
 		<div id="footer">&copy; nookls 20141-12121.</div>
 	</body>
-</html>');
+</html>'
