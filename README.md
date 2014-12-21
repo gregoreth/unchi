@@ -27,7 +27,4 @@ Cons
 ----
 - No BMP or TIFF thumbnail support
 - Made by me
-
-To do
------
-- Get to a point where I actually feel ok to release it
+- Requires apache + rewriterule for the image urls
