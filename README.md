@@ -17,6 +17,7 @@ Features
 - No depencencies
 - Will actually exist on my github
 - JSON file for usage with ShareX
+- Name means poop in japanese
 
 Cons
 ----
