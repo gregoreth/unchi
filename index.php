@@ -6,7 +6,7 @@
 	</head>
 	<body class="gallery">
 		<div class="header">File host thing</div>
-		<div class="menu top"><a href="upload.php">Upload</a> | <a href="?key=<?=@$_GET['key']?>">Gallery View (images only)</a> | <a href="?key=<?=@$_GET['key']?>&view=list">File Listing View</a></div>
+		<div class="menu top"><a href="upload.php">Upload</a> | <a href="?key=<?=@$_GET['key']?>&view=gallery">Gallery View (images only)</a> | <a href="?key=<?=@$_GET['key']?>&view=list">File Listing View</a></div>
 		<div id="cont">
 <?php
 require 'config.php';
