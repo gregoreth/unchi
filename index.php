@@ -14,8 +14,8 @@ require 'config.php';
 if(isset($_GET['key']) && hash('sha512', $_GET['key']) == $unchi['password']) {
 	
 	// Find out what page user is on and what view they have
-	$page = (isset($_GET['page']) ? $_GET['page'] :                  1);
-	$view = (isset($_GET['view']) ? $_GET['view'] : $unchi['def_view']);
+	$page = (isset($_GET['page']) ? $_GET['page'] : 1);
+	$view = (isset($_GET['view']) && $_GET['view'] == "gallery" || $_GET['view'] == "list" ? $_GET['view'] : $unchi['def_view']);
 
 	// Collect the images of the part of the page
 	$pagepart = ($page-1) * $unchi['pg_amount'];
