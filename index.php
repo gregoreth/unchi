@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/unchi.css" />
-		<title>Unchi - Gallery</title>
+		<title>Not unchi</title>
 	</head>
 	<body class="gallery">
 		<div class="header">File host thing</div>
