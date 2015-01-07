@@ -57,8 +57,9 @@ if(isset($_POST['submit'])) {
 				
 				}
 			
-				echo '<span style="display:none">'.json_encode(array("filename" => $file_rand_name.'.'.$file_ext))."</span>\n";
-				echo 'Upload successful!<br> <img src="'.$upload_file.'" />';
+				$upload_file_basename = basename($upload_file);
+				echo '<span style="display:none">'.json_encode(array("filename" => $upload_file_basename))."</span>\n";
+				echo 'Upload successful!<br>'.(getimagesize($upload_file) !== false ? '<a href="'.$upload_file_basename.'"><img src="'.$upload_file_basename.'" alt="Uploaded image"></a>' : '<a href="'.$upload_file_basename.'">'.$upload_file_basename.'</a>');
 			
 			} else {	
 				echo 'Image failed to upload. PHP $_FILES error: '.$_FILES['fileup']['error'];
