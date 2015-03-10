@@ -1,16 +1,32 @@
-<body class="upload">
-<link rel="stylesheet" type="text/css" href="/unchi.css" />
-<div class="header">File host thing</div>
-<div id="cont">
-Welcome to not unchi! The file host that might come out of your anus.<br><br>
-<form method="POST" enctype="multipart/form-data">
-	<input type="file" name="fileup" /><br>
-	<input type="text" name="password" placeholder="Password" />
-	<input type="submit" name="submit" value="Submit" />
-</form>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Upload - Unchi</title>
+		<link rel="stylesheet" type="text/css" href="/unchi.css" />
+	</head>
+	<body class="upload">
+		<div class="header">Unchi うんち</div>
+		<div id="cont">
+			Welcome to unchi! The file host that comes out of your anus.<br><br>
+			<form method="POST" enctype="multipart/form-data">
+				<input type="file" name="fileup" /><br>
+				<input type="text" name="password" placeholder="Password" />
+				<input type="submit" name="submit" value="Submit" />
+			</form>
 <?php
 require 'config.php';
-ini_set('memory_limit',$unchi['mem_limit']);
+
+// Function for generating random filename
+function generate_rand_name() {
+	$file_rand_name   = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 5)), 0, 5);
+	$file_exist_check = glob($unchi['upld_dir'].$file_rand_name.'.*');
+	
+	if(count($file_exist_check) == 0) 
+		return $file_rand_name; 
+	else 
+		generate_rand_name();	
+}
 
 if(isset($_POST['submit'])) {
 	
@@ -24,11 +40,11 @@ if(isset($_POST['submit'])) {
 		$file_basename = basename($file_name, $file_ext);
 		
 		// Disallowed file extensions
-		$file_disallowed = array('php', 'html', 'htm', 'js');
+		$file_disallowed = array('php', 'html', 'htm', 'js', 'jsp', 'aspx');
 		
-		// Random generation of 7 alphanumeric chars for the new file name
-		$file_rand_name  = substr(str_shuffle(str_repeat("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 7)), 0, 7);
-		
+		// Random generation of 5 alphanumeric chars for the new file name including check for existing name
+		$file_rand_name = generate_rand_name();
+	
 		// Upload locations and shit
 		$upload_file = $unchi['upld_dir'].$file_rand_name.'.'.$file_ext;
 		
@@ -56,7 +72,7 @@ if(isset($_POST['submit'])) {
 					imagedestroy($thumbnail);
 				
 				}
-			
+				
 				$upload_file_basename = basename($upload_file);
 				echo '<span style="display:none">'.json_encode(array("filename" => $upload_file_basename))."</span>\n";
 				echo 'Upload successful!<br>'.(getimagesize($upload_file) !== false ? '<a href="'.$upload_file_basename.'"><img src="'.$upload_file_basename.'" alt="Uploaded image"></a>' : '<a href="'.$upload_file_basename.'">'.$upload_file_basename.'</a>');
@@ -74,3 +90,7 @@ if(isset($_POST['submit'])) {
 	}
 	
 } 
+?>
+		</div>
+	</body>
+</html>
