@@ -67,7 +67,7 @@ body.upload #cont {
 }
 
 input[type="file"] {
-	width: 100%;
+	width: calc(100% - 4px);
 	border: 2px solid #606060;
 }
 
@@ -80,11 +80,11 @@ input[type="file"]:active {
 }
 
 input[type="text"] {
-	width: 50%;
+	width: calc(100% - 6px);
 }
 
 input[type="submit"] {
-	width: 49%;
+	width: 100%;
 }
 
 body.upload img {
