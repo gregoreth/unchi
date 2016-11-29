@@ -4,7 +4,8 @@
  * It could take a VERY long time to execute, depending on the number of images.
  * It's strongly recommended that the thumbnail folder is empty before you run this.
  * I would advice against deleting the file after you use it just in case, but PLEASE hide it or chmod 000 it.
- * There's no warning, the moment you open this it will run. */
+ * There's no warning, the moment you open this it will run.
+ * Does this even work lol? I've never tried it. */
  
 require 'config.php'; 
  
